@@ -1,0 +1,11 @@
+# db
+*.sqlite3
+migrations/
+
+# front_end
+.vscode/
+node_module/
+dist/
+
+# back_end
+Pipfile.lock
