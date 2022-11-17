@@ -12,8 +12,11 @@ $ brew install node
 $ pip install django
 $ django-admin startproject book_demo
 ```
-
-3. create vue3 project 
+3. install python package 
+```
+$ pip install -r requirements.txt
+```
+4. create vue3 project 
 ```
 $ npm install -g @vue/cli  #vue3 using vite 
 ```
@@ -37,18 +40,18 @@ $ npm install -g @vue/cli  #vue3 using vite
 
 **<br>** 
 
-4. install front end package
+5. install front end package
 ```
 $ npm install
 $ npm install axios # replace ajax
 ```
 
-5. development mode (it will run a node server )
+6. development mode (it will run a node server )
 ```
 $ npm run dev
 ```
 
-6. modify vite config 
+7. modify vite config 
 
 ```
 # vite.config.js
@@ -90,7 +93,7 @@ export default defineConfig({
 
 ```
 
-7. Add django_vite config to settings.py
+8. Add django_vite config to settings.py
 ```
 # Where ViteJS assets are built.
 DJANGO_VITE_ASSETS_PATH = BASE_DIR / "appfront" / "static" / "dist"
@@ -105,7 +108,7 @@ STATICFILES_DIRS = [DJANGO_VITE_ASSETS_PATH]
 
 ```
 
-8. add index.html in "templates" folder
+9. add index.html in "templates" folder
 ```
 # index.html
 {% load django_vite %}
@@ -125,7 +128,7 @@ STATICFILES_DIRS = [DJANGO_VITE_ASSETS_PATH]
   </body>
 </html>
 ```
-9. add "appfront/src/components/Home.vue"
+10. add "appfront/src/components/Home.vue"
 ```
 <template>
 
@@ -207,7 +210,7 @@ a {
 </style>
 ```
 
-10. modify "/appfront/src/App.vue"
+11. modify "/appfront/src/App.vue"
 ```
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
@@ -250,15 +253,14 @@ header {
 </style>
 ```
 
+12. create django application "books" (You can refer to the django rest framework example )
 
-11. create django application "books" (You can refer to the django rest framework example )
-
-12.add variable to "setting.py" (it can get settings.py "debug" value in template )
+13. add variable to "setting.py" (it can get settings.py "debug" value in template )
 ```
 INTERNAL_IPS = ["127.0.0.1"]
 ```
 
-13.modify "templates/index.html"
+14. modify "templates/index.html"
 ```
   <body>
     <div id="app"></div>
@@ -271,7 +273,7 @@ INTERNAL_IPS = ["127.0.0.1"]
         {% endif %}
   </body>
 ```
-14.set the production mode configuration (you should modify "book_demo/urls.py" ,if you want to use production mode ,
+15. set the production mode configuration (you should modify "book_demo/urls.py" ,if you want to use production mode ,
 you need to run `npm run build` and `python manage.py collectionstatic` )
 ```
 from django.urls import path, include, re_path
