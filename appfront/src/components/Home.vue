@@ -35,12 +35,12 @@ export default {
   },
   methods: {
     loadBooks() {
-      Axios('http://localhost:8000/api/books/')
+      Axios('http://127.0.0.1:8000/api/books/')
           .then((response) => this.books = response.data)
           .catch((error) => console.log(error));
     },
     bookSubmit() {
-      Axios.post(`http://localhost:8000/api/books/`, {
+      Axios.post(`http://127.0.0.1:8000/api/books/`, {
         'name': this.inputBook.name,
         'author': this.inputBook.author
       }).then(response => {

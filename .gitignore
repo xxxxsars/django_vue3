@@ -6,6 +6,7 @@ migrations/
 .vscode/
 node_module/
 dist/
+staticfiles/
 
 # back_end
 Pipfile.lock
